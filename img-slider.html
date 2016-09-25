@@ -1,48 +1,30 @@
-<template>
+<script src="https://www.polymer-project.org/components/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="https://docs-05-dot-polymer-project.appspot.com/0.5/components/core-ajax/core-ajax.html">
 
- <style>
-  @import url('img-slider.css');
- </style>
+<polymer-element name="img-slider" noscript>
 
- <div id="slider">
-  <input checked="" type="radio" name="slider" id="slide1" selected="false">
-  <input type="radio" name="slider" id="slide2" selected="false">
-  <input type="radio" name="slider" id="slide3" selected="false">
-  <input type="radio" name="slider" id="slide4" selected="false">
-  <div id="slides">
-   <div id="overflow">
-    <div class="inner">
-     <content select="img"></content>
+ <template>
+
+  <style>
+   @import url('img-slider.css');
+  </style>
+
+  <div id="slider">
+   <input checked="" type="radio" name="slider" id="slide1" selected="false">
+   <input type="radio" name="slider" id="slide2" selected="false">
+   <input type="radio" name="slider" id="slide3" selected="false">
+   <input type="radio" name="slider" id="slide4" selected="false">
+   <div id="slides">
+    <div id="overflow">
+     <div class="inner">
+      <content select="img"></content>
+     </div>
     </div>
    </div>
+   <label for="slide1"></label>
+   <label for="slide2"></label>
+   <label for="slide3"></label>
+   <label for="slide4"></label>
   </div>
-  <label for="slide1"></label>
-  <label for="slide2"></label>
-  <label for="slide3"></label>
-  <label for="slide4"></label>
- </div>
-</template>
-
-
-<script>
- (function () {
-  var thisDoc, thatDoc, tmpl, Element, shadowRoot;
-
-  thisDoc = document.currentScript.ownerDocument;
-  thatDoc = document;
-
-  tmpl = thisDoc.querySelector('template');
-  Element = Object.create(HTMLElement.prototype)
-
-  Element.createdCallback = function () {
-   shadowRoot = this.createShadowRoot();
-   var clone = thatDoc.importNode(tmpl.content, true);
-   shadowRoot.appendChild(clone);
-
-  }
-  thatDoc.registerElement('img-slider', {
-   prototype: Element
-  });
-
- })()
-</script>
+ </template>
+</polymer-element>
