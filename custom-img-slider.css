@@ -1,8 +1,12 @@
-img-slider /deep/ #slider {
+img-slider >>> #slider {
  margin-top: 30px;
- padding-top: 20px;
+}
+
+.container {
+ text-align: center;
+ margin-top: 30px;
 }
 
 body {
- background-color: black;
+ background-color: wheat;
 }
